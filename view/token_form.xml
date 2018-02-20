@@ -4,10 +4,12 @@ this repository contains the full copyright notices and license terms. -->
 <form>
     <label name="active"/>
     <field name="active"/>
-    <label name="key"/>
-    <field name="key"/>
+    <label name="name"/>
+    <field name="name"/>
     <label name="user"/>
     <field name="user"/>
     <label name="party"/>
     <field name="party"/>
+    <label name="key"/>
+    <field name="key"/>
 </form>

@@ -3,6 +3,7 @@
 this repository contains the full copyright notices and license terms. -->
 <tree>
     <field name="active"/>
+    <field name="name"/>
     <field name="user"/>
     <field name="party"/>
     <field name="key"/>

@@ -28,6 +28,11 @@ msgid "Key"
 msgstr "Clé"
 
 #, fuzzy
+msgctxt "field:api.token,name:"
+msgid "Name"
+msgstr "Nom"
+
+#, fuzzy
 msgctxt "field:api.token,party:"
 msgid "Party"
 msgstr "Tiers"

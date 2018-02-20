@@ -17,6 +17,7 @@ class Token(ModelSQL, ModelView):
     __name__ = 'api.token'
 
     active = fields.Boolean('Active')
+    name = fields.Char('Name', required=True)
     key = fields.Char('Key', required=True, readonly=True)
     user = fields.Many2One('res.user', 'User', required=True)
     party = fields.Many2One('party.party', 'Party')
