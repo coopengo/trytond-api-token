@@ -3,27 +3,31 @@
 import os
 import binascii
 
+from trytond.pool import PoolMeta
 from trytond.model import ModelSQL, ModelView, fields
-from trytond.pyson import Eval
 
 __all__ = [
     'Token',
     ]
 
 
-class Token(ModelSQL, ModelView):
+class Token(ModelSQL, ModelView, metaclass=PoolMeta):
     'API Token'
     __name__ = 'api.token'
 
     active = fields.Boolean('Active')
     name = fields.Char('Name', required=True)
-    key = fields.Char('Key', states={'invisible': ~Eval('key')})
+    key = fields.Char('Key', required=True)
     user = fields.Many2One('res.user', 'User', required=True)
     party = fields.Many2One('party.party', 'Party')
 
     @classmethod
     def default_active(cls):
         return True
+
+    @classmethod
+    def default_key(cls):
+        return binascii.hexlify(os.urandom(24)).decode('utf-8')
 
     @classmethod
     def check(cls, key):
@@ -33,11 +37,3 @@ class Token(ModelSQL, ModelView):
             return token.user.id, token.party.id if token.party else None
         else:
             return None, None
-
-    @classmethod
-    def create(cls, vlist):
-        for values in vlist:
-            if not values.get('key'):
-                values['key'] = binascii.hexlify(
-                    os.urandom(24)).decode('ascii')
-        return super(Token, cls).create(vlist)
