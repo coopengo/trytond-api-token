@@ -1,2 +1,2 @@
-- BUG#11100 Corriger le typagede la clef à Str et la génération de la clef
+- BUG#11100 Corriger le typage de la clef à Str et la génération de la clef
 - FEA#7859 nouveau module de gestion des tokens d'accès rattachés à un tiers
