@@ -1,1 +1,2 @@
+- BUG#11100 Fix key cast to string and key generation
 - FEA#7859 new module to manage access token linked to party
