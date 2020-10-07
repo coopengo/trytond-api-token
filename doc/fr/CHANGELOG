@@ -1,2 +1,3 @@
-- BUG#11100 Corriger le typage de la clef à Str et la génération de la clef
-- FEA#7859 nouveau module de gestion des tokens d'accès rattachés à un tiers
+* OTH#00000 Ne pas dupliquer le jeton à la duplication d'un utilisateur
+* BUG#11100 Corriger le typage de la clef à Str et la génération de la clef
+* FEA#7859 nouveau module de gestion des tokens d'accès rattachés à un tiers
