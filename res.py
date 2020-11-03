@@ -15,8 +15,8 @@ class User(metaclass=PoolMeta):
     tokens = fields.One2Many('api.token', 'user', 'Tokens')
 
     @classmethod
-    def copy(cls, instances, defaults=None):
-        if defaults is None:
+    def copy(cls, instances, default=None):
+        if default is None:
             defaults = {}
         defaults.setdefault('tokens', None)
-        return super().copy(instances, defaults)
+        return super().copy(instances, default)
