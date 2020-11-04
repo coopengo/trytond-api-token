@@ -17,6 +17,6 @@ class User(metaclass=PoolMeta):
     @classmethod
     def copy(cls, instances, default=None):
         if default is None:
-            defaults = {}
-        defaults.setdefault('tokens', None)
+            default = {}
+        default.setdefault('tokens', None)
         return super().copy(instances, default)
